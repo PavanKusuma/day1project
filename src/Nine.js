@@ -24,7 +24,7 @@ function Nine(){
     }
     return(
         <div>
-            {(count == 0) ? 
+            {(count === 0) ? 
             <button className="btn btn-outline-dark btn-sm" 
             onClick={btnAddToCard}> Add to Cart </button>
             :

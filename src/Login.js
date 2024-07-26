@@ -1,5 +1,4 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { UserContext } from "./Home";
 import { globalContext } from "./App";
 
 function Login(){
@@ -7,7 +6,7 @@ function Login(){
     const passwordRef = useRef(null); // reference
     const [loginMessage, setMessage] = useState('');
     // const {isLogin, setIsLogin} = useContext(UserContext);
-    const {globalIsLogin, setGlobalIsLogin} = useContext(globalContext);
+    const {setGlobalIsLogin} = useContext(globalContext);
     
 
     // use effect to focus on input field
@@ -17,7 +16,7 @@ function Login(){
 
     const formSubmitted = (event)=> {
         event.preventDefault(); // prevent reload
-        if(collegeIdRef.current.value == passwordRef.current.value)
+        if(collegeIdRef.current.value === passwordRef.current.value)
         { 
             setMessage("Correct");
             setGlobalIsLogin(true);

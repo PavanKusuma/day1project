@@ -2,10 +2,9 @@ import Nine from "./Nine";
 
 function CardUI(props){
     
-const width = 300;
     return(
         <div className="card" style={{width:'350px'}}>
-            <img src="/atom.png" width={300} 
+            <img src="/atom.png" width={300} alt="DummyImage"
             style={{border:'10px solid #FF0000',borderRadius:'50px'}}/>
             
             <div className="card-body">

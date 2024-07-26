@@ -3,8 +3,8 @@ import { globalContext } from "./App"
 import Navigation from "./Navigation"
 
 function Profile(){
-    const {globalUserObject, setGlobalUserObject} = useContext(globalContext);
-    const {globalIsLogin, setGlobalIsLogin} = useContext(globalContext);
+    const {globalUserObject} = useContext(globalContext);
+    const {setGlobalIsLogin} = useContext(globalContext);
     const logoutAction = () => { setGlobalIsLogin(false); }
     useEffect(()=>{
         const name = localStorage.getItem("name");

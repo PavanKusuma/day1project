@@ -10,7 +10,7 @@ function Register(){
     const [user, setUser] = useState({});
     
     // use context provided by App.js
-    const {globalUserObject, setGlobalUserObject} 
+    const {setGlobalUserObject} 
     = useContext(globalContext);
 
     const getCollegeId = (event) => {
@@ -66,9 +66,9 @@ function Register(){
                     </select>
 
                 <div style={{display:'flex'}}>
-                    <input type="radio" checked={genderValue == "Female"}
+                    <input type="radio" checked={genderValue === "Female"}
                     value="Female" onChange={getGender}></input>Female
-                    <input type="radio" checked={genderValue == "Male"}
+                    <input type="radio" checked={genderValue === "Male"}
                     value="Male" onChange={getGender}></input>Male
                 </div>
 

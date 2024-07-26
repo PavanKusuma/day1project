@@ -4,7 +4,7 @@ import { globalContext } from "./App";
 
 
 function Navigation(){
-    const {globalCount, setGlobalCount} = useContext(globalContext);
+    const {globalCount} = useContext(globalContext);
     return(
         <div style={{display:'flex', flexDirection:'row',
         justifyContent:'space-between', background:'#e5e5e5',padding:'20px'}}>
