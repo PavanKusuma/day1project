@@ -1,11 +1,14 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "./Home";
+import { globalContext } from "./App";
 
 function Login(){
     const collegeIdRef = useRef(null); // reference
     const passwordRef = useRef(null); // reference
     const [loginMessage, setMessage] = useState('');
-    const {isLogin, setIsLogin} = useContext(UserContext);
+    // const {isLogin, setIsLogin} = useContext(UserContext);
+    const {globalIsLogin, setGlobalIsLogin} = useContext(globalContext);
+    
 
     // use effect to focus on input field
     useEffect(() => {
@@ -17,7 +20,8 @@ function Login(){
         if(collegeIdRef.current.value == passwordRef.current.value)
         { 
             setMessage("Correct");
-            setIsLogin(true);
+            setGlobalIsLogin(true);
+            localStorage.setItem("name","ReactJS");
          } 
         else { 
             setMessage("Incorrect");

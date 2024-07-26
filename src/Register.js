@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { globalContext } from "./App";
 
 function Register(){
     const [collegeIdValue, setCollegeId ]=useState('');
@@ -7,6 +8,11 @@ function Register(){
     const [branchValue, setBranch ]=useState('');
     const [genderValue, setGenderValue ]=useState('Female');
     const [user, setUser] = useState({});
+    
+    // use context provided by App.js
+    const {globalUserObject, setGlobalUserObject} 
+    = useContext(globalContext);
+
     const getCollegeId = (event) => {
         setCollegeId(event.target.value)
         console.log(collegeIdValue);
@@ -34,6 +40,7 @@ function Register(){
             branchValue, genderValue
         }
         setUser(obj)
+        setGlobalUserObject(obj); // set the global user object
         console.log(obj);
         console.log(user);
     }
